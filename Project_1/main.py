@@ -38,6 +38,7 @@ users = {
     "liz": "pass123"
 }
 separator = "-" * 50
+
 #login
 username = input("Enter username: ")
 password = input("Enter password: ")
@@ -53,9 +54,7 @@ if username in users and password == users[username]:
   if not text_index.isdigit() or not(1 <= int(text_index) <= 3):
     print("Wrong value!Must be in the range 1-3.")
   else:
-    for index, text in enumerate(TEXTS, start=1):
-      if int(text_index) == index:
-        chosen_text = text
+    chosen_text = TEXTS[int(text_index) - 1]
 
 # text analysis       
   words_number = len(chosen_text.split())
@@ -63,7 +62,7 @@ if username in users and password == users[username]:
   capitals = 0
   lower_word = 0
   numbers = 0
-  sum = 0
+  numbers_list = []
   for word in chosen_text.split():
     if word.istitle():
       capital_letter += 1
@@ -71,9 +70,10 @@ if username in users and password == users[username]:
         capitals += 1
     elif word.islower():
       lower_word +=1
-    elif int(word):
+    elif word.isdigit():
       numbers += 1
-      sum = sum + int(word)
+      numbers_list.append(int(word))
+  total_sum = sum(numbers_list)
   print(separator)
   statistics = f'''
     There are {words_number} words in the selected text.
@@ -81,15 +81,16 @@ if username in users and password == users[username]:
     There are {capitals} uppercase words.
     There are {lower_word} lowercase words.
     There are {numbers} numeric strings.
-    The sum of all the numbers is {sum}
+    The sum of all the numbers is {total_sum}
     '''
   print(statistics)
   print(separator)
   
-  # graph creating
+  # punctuation cleaning and graph creating
+  punctuation = ".,!?;:'\""
   words_length = {} 
   for word in chosen_text.split():
-    word_length = len(word)
+    word_length = len(word.strip(punctuation))
     if word_length in words_length:
       words_length[word_length] += 1
     else:
@@ -100,7 +101,7 @@ if username in users and password == users[username]:
 
 # unregistered user
 else:
-  print(f'username:{username}\npassword:{password}\nunregistered user, terminating the program..')
+  print(f'unregistered user, terminating the program..')
 
 
 
