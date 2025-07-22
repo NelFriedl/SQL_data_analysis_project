@@ -39,8 +39,9 @@ CSV file output structure:
     individual political parties (aphabetically ordered and separated in columns) and number of votes received
     
 ## Successful executions
-simple location:     python main.py Praha praha.csv                -> Data successfully saved to praha.csv.
-location with space: python main.py "Nový Jičín" "novy_jicin.csv"  -> Data successfully saved to novy_jicin.csv.
+simple location:         python main.py Praha praha.csv                -> Data successfully saved to praha.csv.
+
+location with space:     python main.py "Nový Jičín" "novy_jicin.csv"  -> Data successfully saved to novy_jicin.csv.
 
 ## Common errors
 Missing quotation marks:
