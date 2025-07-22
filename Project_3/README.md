@@ -4,7 +4,7 @@ This Python script is designed to scrape official results from the 2017 election
 The script allows users to extract election data for a specific location/district and save it into a structured CSV file.
 
 ## Installation
-1. The script is available for free download:
+1. The script is available at: https://github.com/NelFriedl/Kurz/tree/main/Project_3
 
 2. Set a virtual environment (venv) - highly recommended:
     - create venv:      python -m venv your_venv_name
@@ -14,7 +14,8 @@ The script allows users to extract election data for a specific location/distric
     Once activated, the (your_venv_name) will show in terminal prompt.
 
 3. Install required libraries
-    Except built-in libraries, the script uses external libraries listed in requirements.txt. These libraires can be installed using following command: pip install -r requirements.txt
+    Except built-in libraries, the script uses external libraries listed in requirements.txt.
+   These libraires can be installed using following command: pip install -r requirements.txt
     
 ## Input and output
 
